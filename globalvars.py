@@ -17,10 +17,10 @@ from graia.saya import Channel
 
 import botfunc
 
-channel = Channel.current()
-channel.name("Linkbit")
-channel.description("使khbit兼容2kbit-py插件")
-channel.author("Emerald-AM9")
+channel = Channel[ChannelMeta].current()
+channel.meta['name'] = "Linkbit"
+channel.meta['description'] = "2kbit/OWbit兼容模块"
+channel.meta['author'] = "Emerald-AM9"
 
 try:
     linkbit_not_in_auto_mode = yaml.safe_load(open('linkbit.yaml', 'r', encoding='UTF-8'))
