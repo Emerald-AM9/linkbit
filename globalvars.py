@@ -26,8 +26,8 @@ try:
     linkbit_not_in_auto_mode = yaml.safe_load(open('linkbit.yaml', 'r', encoding='UTF-8'))
 except FileNotFoundError:
     botfunc.safe_file_write('linkbit.yaml', """# LinkBit配置文件
-old-hanbot-api-ip: ""
-old-hanbot-api-key: ""
+legacy-hanbot-api-ip: ""
+legacy-hanbot-api-key: ""
 current-unix-timestamp: """)
     logger.error('linkbit.yaml 未创建，程序已自动创建，请填写该文件的内容')
     sys.exit(1)
@@ -48,8 +48,8 @@ ignores = await botfunc.get_all_sb()
 g_ignores = await botfunc.get_all_sb()
 time_now = linkbit_niam_conf('current-unix-timestamp')
 owner_qq = botfunc.get_config('su')
-api = linkbit_niam_conf('old-hanbot-api-ip')
-api_key = linkbit_niam_conf('old-hanbot-api-key')
+api = linkbit_niam_conf('legacy-hanbot-api-ip')
+api_key = linkbit_niam_conf('legacy-hanbot-api-key')
 bot_qq = botfunc.get_config('qq')
 verify_key = botfunc.get_config('verifyKey')
 database_host = botfunc.get_cloud_config('MySQL_Host')
